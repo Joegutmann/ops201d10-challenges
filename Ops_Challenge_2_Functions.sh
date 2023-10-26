@@ -18,3 +18,5 @@ echo "This is the login history"
 
 # Main
 print_login
+print_login
+print_login
