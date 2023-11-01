@@ -1,4 +1,10 @@
 #!/bin/bash
+
+# Script Name:                  System Information
+# Author:                       Joe Gutmann
+# Date of latest revision:      10.31.23
+# Purpose:                      Grep Challenge 7
+
 name=$(hostname)
 echo "The name of the computer is $name"
 
