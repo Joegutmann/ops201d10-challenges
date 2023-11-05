@@ -29,4 +29,4 @@ Stop-Process -Name notepad
 : :: Kill a process by its Process Identification Number. Choose a process whose termination won’t destabilize the system, such as Google Chrome
 : :: or MS Edge.
 
-StoStop-Process -Id 8660
+Stop-Process -Id 8660
