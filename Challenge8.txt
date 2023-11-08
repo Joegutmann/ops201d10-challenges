@@ -1,0 +1,34 @@
+@echo off : : this turns off the echoing of commands so they don't display in the console.
+setlocal enabledelayedexpansion : : allows variables to be expanded at runtime
+
+
+set /p sourcePath=Enter the source folder path: :: where you are copying a file from
+
+
+set /p destinationPath=Enter the destination folder path: ::where you are copying the file to
+
+
+if not exist "!sourcePath!\" ( :: this is saying if the source does not exist then say this.
+    echo Error: Source folder does not exist.
+    goto :eof :: terminates script if error.
+)
+
+
+if not exist "!destinationPath!\" (
+    echo Error: Destination folder does not exist. :: this is saying if the destination folder does not exist. say this.
+    goto :eof
+)
+
+
+robocopy "!sourcePath!" "!destinationPath!" /E :: robo copy is the function advanced function of plain old copy.
+
+
+if errorlevel 8 (
+    echo Error: ROBOCOPY encountered errors during the copy operation.  :: this is stating if there were errors, say this...
+) else (
+    echo Copy operation completed successfully.   :: This one is if it was successful say it was successul.
+)
+
+
+:end : : labels the end of the script
+endlocal : : hard end of the script limiting the script to within its borders.
